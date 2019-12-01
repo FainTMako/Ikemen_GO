@@ -69,7 +69,7 @@ var sys = System{
 	keyInput:              glfw.KeyUnknown,
 	keyString:             "",
 	comboExtraFrameWindow: 1,
-	FLAC_FrameWait:        -1,
+
 	// Localcoord sceenpack
 	luaSpriteScale:        1,
 	luaSmallPortraitScale: 1,
