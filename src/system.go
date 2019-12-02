@@ -17,7 +17,7 @@ import (
 	"github.com/faiface/beep"
 	"github.com/faiface/beep/speaker"
 	"github.com/go-gl/gl/v2.1/gl"
-	"github.com/go-gl/glfw/v3.2/glfw"
+	"github.com/go-gl/glfw/v3.3/glfw"
 	"github.com/timshannon/go-openal/openal"
 	lua "github.com/yuin/gopher-lua"
 )
@@ -257,7 +257,7 @@ type System struct {
 	wavVolume               int
 	bgmVolume               int
 	AudioDucking            bool
-	FLAC_FrameWait          int
+	//FLAC_FrameWait          int
 
 	controllerStickSensitivity float32
 	xinputTriggerSensitivity   float32
@@ -488,12 +488,12 @@ func (s *System) soundWrite() {
 			}
 		}
 
-		if s.FLAC_FrameWait >= 0 {
-			if s.FLAC_FrameWait == 0 {
-				s.bgm.PlayMemAudio(s.bgm.loop, s.bgm.bgmVolume)
-			}
-			s.FLAC_FrameWait--
-		}
+		//if s.FLAC_FrameWait >= 0 {
+		//	if s.FLAC_FrameWait == 0 {
+		//		s.bgm.PlayMemAudio(s.bgm.loop, s.bgm.bgmVolume)
+		//	}
+		//	s.FLAC_FrameWait--
+		//}
 	}
 	src.Delete()
 	openal.NullContext.Activate()
